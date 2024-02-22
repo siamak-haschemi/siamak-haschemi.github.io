@@ -1,5 +1,37 @@
 var map;
 
+function loadGeoJson(url, fillColor, color, L, map) {
+    // Fetch GeoJSON file
+    fetch(url)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+
+            let geojsonMarkerOptions = {
+                radius: 8,
+                fillColor: fillColor,
+                color: color,
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8
+            };
+
+            L.geoJSON(data, {
+                onEachFeature: onEachFeature,
+                pointToLayer: function (feature, latlng) {
+                    return L.circleMarker(latlng, geojsonMarkerOptions);
+                }
+            }).addTo(map);
+
+            map.on('locationfound', onLocationFound);
+            map.on('locationerror', onLocationError);
+        })
+        .catch(function (error) {
+            console.log('Error loading the GeoJSON file: ' + error.message);
+        });
+}
+
 function init() {
 
     let open_topo_map = L.tileLayer.provider('OpenTopoMap');
@@ -68,95 +100,14 @@ function init() {
 
     map.addControl(search);
 
-    // Fetch GeoJSON file
-    fetch('./data/campgrounds.geojson')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
+    loadGeoJson('./data/campgrounds.geojson', "#ff7800", "#000", L, map);
 
-            let geojsonMarkerOptions = {
-                radius: 8,
-                fillColor: "#ff7800",
-                color: "#000",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8
-            };
+    loadGeoJson('./data/bettundbike.geojson', "#556700", "#000", L, map);
 
-            L.geoJSON(data, {
-                onEachFeature: onEachFeature,
-                pointToLayer: function (feature, latlng) {
-                    return L.circleMarker(latlng, geojsonMarkerOptions);
-                }
-            }).addTo(map);
+    loadGeoJson('./data/ioverlander.geojson', "#0067FF", "#FFF", L, map);
 
-            map.on('locationfound', onLocationFound);
-            map.on('locationerror', onLocationError);
-        })
-        .catch(function (error) {
-            console.log('Error loading the GeoJSON file: ' + error.message);
-        });
+    loadGeoJson('./data/alpacacamping.geojson', "#FF0000", "#FFF", L, map);
 
-    // Fetch GeoJSON file
-    fetch('./data/bettundbike.geojson')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            let geojsonMarkerOptions = {
-                radius: 8,
-                fillColor: "#556700",
-                color: "#000",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8
-            };
-
-            L.geoJSON(data, {
-                onEachFeature: onEachFeature,
-                pointToLayer: function (feature, latlng) {
-                    return L.circleMarker(latlng, geojsonMarkerOptions);
-                }
-            }).addTo(map);
-
-
-            map.on('locationfound', onLocationFound);
-            map.on('locationerror', onLocationError);
-        })
-        .catch(function (error) {
-            console.log('Error loading the GeoJSON file: ' + error.message);
-        });
-
-    // Fetch GeoJSON file
-    fetch('./data/ioverlander.geojson')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            let geojsonMarkerOptions = {
-                radius: 8,
-                fillColor: "#0067FF",
-                color: "#FFF",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8
-            };
-
-            L.geoJSON(data, {
-                onEachFeature: onEachFeature,
-                pointToLayer: function (feature, latlng) {
-                    return L.circleMarker(latlng, geojsonMarkerOptions);
-                }
-            }).addTo(map);
-
-
-            map.on('locationfound', onLocationFound);
-            map.on('locationerror', onLocationError);
-        })
-        .catch(function (error) {
-            console.log('Error loading the GeoJSON file: ' + error.message);
-        });
 };
 
 

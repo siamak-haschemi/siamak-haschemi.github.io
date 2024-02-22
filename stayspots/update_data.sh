@@ -26,7 +26,7 @@ curl 'https://www.bettundbike.de/unterkuenfte-finden/karte?tx_bettundbikesearch_
 
 jq '{ type: "FeatureCollection", features: [ .[] | { type: "Feature", properties: { name: .title, description: ("From <b><a href=\"https://www.bettundbike.de" + .website + "\">Bett und Bike</a>:</b>"), link: "", "marker-color": "#00FF00", "marker-symbol": "commercial"}, geometry: { type: "Point", coordinates: [ .position.lng, .position.lat ] } }] }' data/bettundbike.json > data/bettundbike.geojson
 
-curl -o data/ioverlander.json 'https://www.ioverlander.com/places/search.json?searchboxmin=47,5&searchboxmax=54,15' \
+curl -o data/ioverlander.json 'https://www.ioverlander.com/places/search.json?searchboxmin=46,5&searchboxmax=56,15' \
   -H 'authority: www.ioverlander.com' \
   -H 'accept: application/json, text/javascript, */*; q=0.01' \
   -H 'accept-language: en-US,en;q=0.9,de;q=0.8' \
@@ -44,3 +44,25 @@ curl -o data/ioverlander.json 'https://www.ioverlander.com/places/search.json?se
   --compressed
 
 jq '{ type: "FeatureCollection", features: [ .[] | { type: "Feature", properties: { name: .name, description: ("From <b><a href=\"https://www.ioverlander.com/places/" + (.id|tostring) + "\">iOverlander</a>:</b>" + "<br>" + .description + "<br>date_verified: " + .date_verified+ "<br>" + "category: " + .category), link: "", "marker-color": "#00FF00", "marker-symbol": "commercial" }, geometry: { type: "Point", coordinates: [ .location.longitude, .location.latitude ] } }] }' data/ioverlander.json > data/ioverlander.geojson
+
+####################
+
+curl 'https://search.alpacacamping.de/api/search?page=1&count=10000&language=de&property_type=1&min_lat=46.10820385478601&min_long=5.866315000000213&max_lat=56.08554613029534&max_long=15.041831999999658' \
+  -H 'authority: search.alpacacamping.de' \
+  -H 'accept: */*' \
+  -H 'accept-language: en-US,en;q=0.9,de;q=0.8' \
+  -H 'cache-control: no-cache' \
+  -H 'origin: https://www.alpacacamping.de' \
+  -H 'pragma: no-cache' \
+  -H 'referer: https://www.alpacacamping.de/' \
+  -H 'sec-ch-ua: "Not A(Brand";v="99", "Google Chrome";v="121", "Chromium";v="121"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36' \
+  -H 'x-api-key: fdf9FJK70Jskk897FHKssd99r' \
+  --compressed > data/alpacacamping.json
+
+  jq '{ type: "FeatureCollection", features: [ .hits[] | { type: "Feature", properties: { name: .name, description: ("From <b><a href=\""+ .detail_page_link + "\">aplacacamping</a></b><br><img width=\"200px\" src=\"" + .medium_cover_photo + "\"/>"), link: "", "marker-color": "#00FF00", "marker-symbol": "commercial" }, geometry: { type: "Point", coordinates: [ .property_address.longitude, .property_address.latitude ] } }] }' data/alpacacamping.json > data/alpacacamping.geojson

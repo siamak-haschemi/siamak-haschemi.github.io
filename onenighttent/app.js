@@ -109,11 +109,19 @@ function onEachFeature(feature, layer) {
 
 // Function to create a popup content string
 function createPopupContent(properties, lat, lng) {
+
+    // Example of manually converting a phone number in the description to a clickable link
+    // Assuming 'properties.description' contains a phone number formatted as "+1-123-456-7890"
+    var formattedDescription = properties.description.replace(
+        /(\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9})/g
+        , '<a href="tel:$1">$1</a>'
+    );
+
     var googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
 
     return `
         <strong>${properties.name}</strong><br>
-        ${properties.description}<br>
+        ${formattedDescription}<br>
         <a href="mailto:${properties.link}" target="_blank">${properties.link}</a><br>
         <a href="${googleMapsUrl}" target="_blank">Open in Google Maps</a>
     `;

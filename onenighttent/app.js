@@ -68,14 +68,88 @@ function init() {
 
     map.addControl(search);
 
-
     // Fetch GeoJSON file
     fetch('./data/campgrounds.geojson')
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            L.geoJSON(data, {onEachFeature: onEachFeature}).addTo(map);
+
+            let geojsonMarkerOptions = {
+                radius: 8,
+                fillColor: "#ff7800",
+                color: "#000",
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8
+            };
+
+            L.geoJSON(data, {
+                onEachFeature: onEachFeature,
+                pointToLayer: function (feature, latlng) {
+                    return L.circleMarker(latlng, geojsonMarkerOptions);
+                }
+            }).addTo(map);
+
+            map.on('locationfound', onLocationFound);
+            map.on('locationerror', onLocationError);
+        })
+        .catch(function (error) {
+            console.log('Error loading the GeoJSON file: ' + error.message);
+        });
+
+    // Fetch GeoJSON file
+    fetch('./data/bettundbike.geojson')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            let geojsonMarkerOptions = {
+                radius: 8,
+                fillColor: "#556700",
+                color: "#000",
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8
+            };
+
+            L.geoJSON(data, {
+                onEachFeature: onEachFeature,
+                pointToLayer: function (feature, latlng) {
+                    return L.circleMarker(latlng, geojsonMarkerOptions);
+                }
+            }).addTo(map);
+
+
+            map.on('locationfound', onLocationFound);
+            map.on('locationerror', onLocationError);
+        })
+        .catch(function (error) {
+            console.log('Error loading the GeoJSON file: ' + error.message);
+        });
+
+    // Fetch GeoJSON file
+    fetch('./data/ioverlander.geojson')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            let geojsonMarkerOptions = {
+                radius: 8,
+                fillColor: "#0067FF",
+                color: "#FFF",
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8
+            };
+
+            L.geoJSON(data, {
+                onEachFeature: onEachFeature,
+                pointToLayer: function (feature, latlng) {
+                    return L.circleMarker(latlng, geojsonMarkerOptions);
+                }
+            }).addTo(map);
+
 
             map.on('locationfound', onLocationFound);
             map.on('locationerror', onLocationError);
@@ -112,17 +186,20 @@ function createPopupContent(properties, lat, lng) {
 
     // Example of manually converting a phone number in the description to a clickable link
     // Assuming 'properties.description' contains a phone number formatted as "+1-123-456-7890"
-    var formattedDescription = properties.description.replace(
-        /(\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9})/g
-        , '<a href="tel:$1">$1</a>'
-    );
+    // var formattedDescription = properties.description.replace(
+    //     /(\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9})/g
+    //     , '<a href="tel:$1">$1</a>'
+    // );
 
     var googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
 
     return `
         <strong>${properties.name}</strong><br>
-        ${formattedDescription}<br>
-        <a href="mailto:${properties.link}" target="_blank">${properties.link}</a><br>
-        <a href="${googleMapsUrl}" target="_blank">Open in Google Maps</a>
+        ${properties.description}<br>
+        E-Mail: <a href="mailto:${properties.link}" target="_blank">${properties.link}</a><br>
+        <hr/>
+        Geo-Position: <pre>${lat},${lng}</pre>
+        <a href="${googleMapsUrl}" target="_blank">Open in Google Maps</a>                
+        <hr/>
     `;
 };

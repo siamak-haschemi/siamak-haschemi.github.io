@@ -194,6 +194,8 @@ function createPopupContent(properties, lat, lng) {
     let googleMapsDirectionUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=bicycling`;
     let googleMapsPositionUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`
     let googleMapsStreetViewUrl = `https://maps.google.com/maps?q=&layer=c&cbll=${lat},${lng}`
+    let googleMapsStreetViewUrl2 = `comgooglemaps://?center=${lat},${lng}&mapmode=streetview`
+
 
 
     return `
@@ -204,7 +206,8 @@ function createPopupContent(properties, lat, lng) {
         Geo-Position: <pre>${lat},${lng}</pre>
         <a href="${googleMapsPositionUrl}" target="_blank">Open Map</a><br>
         <a href="${googleMapsDirectionUrl}" target="_blank">Get Directions</a><br>
-        <a href="${googleMapsStreetViewUrl}" target="_blank">Street View</a><br>               
+        <a href="${googleMapsStreetViewUrl}" target="_blank">Street View</a><br>   
+        <a href="${googleMapsStreetViewUrl2}" target="_blank">Street View (mobile)</a><br>               
         <hr/>
     `;
 };

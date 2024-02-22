@@ -26,7 +26,9 @@ curl 'https://www.bettundbike.de/unterkuenfte-finden/karte?tx_bettundbikesearch_
 
 jq '{ type: "FeatureCollection", features: [ .[] | { type: "Feature", properties: { name: .title, description: ("From <b><a href=\"https://www.bettundbike.de" + .website + "\">Bett und Bike</a>:</b>"), link: "", "marker-color": "#00FF00", "marker-symbol": "commercial"}, geometry: { type: "Point", coordinates: [ .position.lng, .position.lat ] } }] }' data/bettundbike.json > data/bettundbike.geojson
 
-curl -o data/ioverlander.json 'https://www.ioverlander.com/places/search.json?searchboxmin=46,5&searchboxmax=56,15' \
+########################
+
+curl -o data/ioverlander.json 'https://www.ioverlander.com/places/search.json?searchboxmin=42,-9&searchboxmax=53,22' \
   -H 'authority: www.ioverlander.com' \
   -H 'accept: application/json, text/javascript, */*; q=0.01' \
   -H 'accept-language: en-US,en;q=0.9,de;q=0.8' \
@@ -47,7 +49,7 @@ jq '{ type: "FeatureCollection", features: [ .[] | { type: "Feature", properties
 
 ####################
 
-curl 'https://search.alpacacamping.de/api/search?page=1&count=10000&language=de&property_type=1&min_lat=46.10820385478601&min_long=5.866315000000213&max_lat=56.08554613029534&max_long=15.041831999999658' \
+curl 'https://search.alpacacamping.de/api/search?page=1&count=10000&language=de&property_type=1&min_lat=42.52981433693957&min_long=-9.996562389927476&max_lat=53.547656401470704&max_long=22.698750110072524' \
   -H 'authority: search.alpacacamping.de' \
   -H 'accept: */*' \
   -H 'accept-language: en-US,en;q=0.9,de;q=0.8' \
@@ -69,7 +71,7 @@ curl 'https://search.alpacacamping.de/api/search?page=1&count=10000&language=de&
 
   ###################
 
-  curl 'https://api.hinterland.camp/location?page=0&pageSize=10000&sw_lat=46.10820385478601&sw_lng=5.866315000000213&ne_lat=56.08554613029534&ne_lng=15.041831999999658&view=map&status=2' \
+  curl 'https://api.hinterland.camp/location?page=0&pageSize=10000&sw_lat=42.52981433693957&sw_lng=-9.996562389927476&ne_lat=53.547656401470704&ne_lng=22.698750110072524&view=map&status=2' \
     -H 'authority: api.hinterland.camp' \
     -H 'accept: */*' \
     -H 'accept-language: en-US,en;q=0.9,de;q=0.8' \

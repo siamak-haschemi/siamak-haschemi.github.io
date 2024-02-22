@@ -191,7 +191,10 @@ function createPopupContent(properties, lat, lng) {
     //     , '<a href="tel:$1">$1</a>'
     // );
 
-    var googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+    let googleMapsDirectionUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=bicycling`;
+    let googleMapsPositionUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`
+    let googleMapsStreetViewUrl = `https://maps.google.com/maps?q=&layer=c&cbll=${lat},${lng}`
+
 
     return `
         <strong>${properties.name}</strong><br>
@@ -199,7 +202,9 @@ function createPopupContent(properties, lat, lng) {
         E-Mail: <a href="mailto:${properties.link}" target="_blank">${properties.link}</a><br>
         <hr/>
         Geo-Position: <pre>${lat},${lng}</pre>
-        <a href="${googleMapsUrl}" target="_blank">Open in Google Maps</a>                
+        <a href="${googleMapsPositionUrl}" target="_blank">Open Map</a><br>
+        <a href="${googleMapsDirectionUrl}" target="_blank">Get Directions</a><br>
+        <a href="${googleMapsStreetViewUrl}" target="_blank">Street View</a><br>               
         <hr/>
     `;
 };

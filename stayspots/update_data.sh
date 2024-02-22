@@ -24,7 +24,7 @@ curl 'https://www.bettundbike.de/unterkuenfte-finden/karte?tx_bettundbikesearch_
   --data-raw 'tx_bettundbikesearch_map_search%5Bparams%5D=%7B%22endpoint%22%3A%22get_results_in_bounds%22%2C%22options%22%3A%7B%22bounds%22%3A%7B%22min%22%3A%7B%22lat%22%3A44.67519809026754%2C%22lng%22%3A0.6730162885652293%7D%2C%22max%22%3A%7B%22lat%22%3A57.65488696363009%2C%22lng%22%3A17.239837813935658%7D%7D%2C%22filters%22%3A%7B%22criteria%22%3A%5B%5D%2C%22countries%22%3A%5B%5D%2C%22states%22%3A%5B%5D%2C%22regions%22%3A%5B%5D%2C%22cities%22%3A%5B%5D%2C%22routes%22%3A%5B%5D%7D%7D%7D' \
   --compressed > data/bettundbike.json
 
-jq '{ type: "FeatureCollection", features: [ .[] | { type: "Feature", properties: { name: .title, description: ("From <b>Bed and Bike:</b><br>" + "<a href=\"https://www.bettundbike.de" + .website + "\">Website</a>"), link: "", "marker-color": "#00FF00", "marker-symbol": "commercial"}, geometry: { type: "Point", coordinates: [ .position.lng, .position.lat ] } }] }' data/bettundbike.json > data/bettundbike.geojson
+jq '{ type: "FeatureCollection", features: [ .[] | { type: "Feature", properties: { name: .title, description: ("From <b><a href=\"https://www.bettundbike.de" + .website + "\">Bett und Bike</a>:</b>"), link: "", "marker-color": "#00FF00", "marker-symbol": "commercial"}, geometry: { type: "Point", coordinates: [ .position.lng, .position.lat ] } }] }' data/bettundbike.json > data/bettundbike.geojson
 
 curl -o data/ioverlander.json 'https://www.ioverlander.com/places/search.json?searchboxmin=47,5&searchboxmax=54,15' \
   -H 'authority: www.ioverlander.com' \
@@ -43,4 +43,4 @@ curl -o data/ioverlander.json 'https://www.ioverlander.com/places/search.json?se
   -H 'x-requested-with: XMLHttpRequest' \
   --compressed
 
-jq '{ type: "FeatureCollection", features: [ .[] | { type: "Feature", properties: { name: .name, description: ("From <b>iOverlander:</b><br>" + .description + "<br>date_verified: " + .date_verified+ "<br>" + "category: " + .category), link: "", "marker-color": "#00FF00", "marker-symbol": "commercial" }, geometry: { type: "Point", coordinates: [ .location.longitude, .location.latitude ] } }] }' data/ioverlander.json > data/ioverlander.geojson
+jq '{ type: "FeatureCollection", features: [ .[] | { type: "Feature", properties: { name: .name, description: ("From <b><a href=\"https://www.ioverlander.com/places/" + (.id|tostring) + "\">iOverlander</a>:</b>" + "<br>" + .description + "<br>date_verified: " + .date_verified+ "<br>" + "category: " + .category), link: "", "marker-color": "#00FF00", "marker-symbol": "commercial" }, geometry: { type: "Point", coordinates: [ .location.longitude, .location.latitude ] } }] }' data/ioverlander.json > data/ioverlander.geojson

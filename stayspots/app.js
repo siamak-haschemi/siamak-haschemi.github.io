@@ -108,6 +108,8 @@ function init() {
 
     loadGeoJson('./data/alpacacamping.geojson', "#FF0000", "#FFF", L, map);
 
+    loadGeoJson('./data/hinterland.geojson', "#FFFF00", "#000", L, map);
+
 };
 
 

@@ -32,6 +32,16 @@ function init() {
                 return div;
             };
             locateBtn.addTo(map);
+
+            const provider = new window.GeoSearch.OpenStreetMapProvider();
+            const search = new GeoSearch.GeoSearchControl({
+                provider: provider,
+                style: 'bar',
+                updateMap: true,
+                autoClose: true,
+            }); // Include the search box with usefull params. Autoclose and updateMap in my case. Provider is a compulsory parameter.
+
+            map.addControl(search);
         })
         .catch(function (error) {
             console.log('Error loading the GeoJSON file: ' + error.message);

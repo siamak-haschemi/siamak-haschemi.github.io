@@ -10,24 +10,32 @@ function init() {
         accessToken: 'a794617134d14b1f82f1cd09d35bca51'
     }).addTo(map);
 
-    L.geoJSON(myGeoJSONData, {
-        onEachFeature: onEachFeature
-    }).addTo(map);
+    // Fetch GeoJSON file
+    fetch('./data/campgrounds.geojson')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            L.geoJSON(data, {onEachFeature: onEachFeature}).addTo(map);
 
-    map.on('locationfound', onLocationFound);
-    map.on('locationerror', onLocationError);
+            map.on('locationfound', onLocationFound);
+            map.on('locationerror', onLocationError);
 
-    var locateBtn = L.control({position: 'topright'});
-    locateBtn.onAdd = function (map) {
-        var div = L.DomUtil.create('div', '');
-        div.innerHTML = '<button class="locate-btn">Locate Me</button>';
-        div.firstChild.onmousedown = div.firstChild.ondblclick = L.DomEvent.stopPropagation;
-        L.DomEvent.on(div.firstChild, 'click', L.DomEvent.stop).on(div.firstChild, 'click', function () {
-            map.locate({setView: true, maxZoom: 16});
+            var locateBtn = L.control({position: 'topright'});
+            locateBtn.onAdd = function (map) {
+                var div = L.DomUtil.create('div', '');
+                div.innerHTML = '<button class="locate-btn">Locate Me</button>';
+                div.firstChild.onmousedown = div.firstChild.ondblclick = L.DomEvent.stopPropagation;
+                L.DomEvent.on(div.firstChild, 'click', L.DomEvent.stop).on(div.firstChild, 'click', function () {
+                    map.locate({setView: true, maxZoom: 16});
+                });
+                return div;
+            };
+            locateBtn.addTo(map);
+        })
+        .catch(function (error) {
+            console.log('Error loading the GeoJSON file: ' + error.message);
         });
-        return div;
-    };
-    locateBtn.addTo(map);
 };
 
 

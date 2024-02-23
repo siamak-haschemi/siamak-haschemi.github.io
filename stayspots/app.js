@@ -1,6 +1,6 @@
 var map;
 
-function loadGeoJson(url, fillColor, color, L, map) {
+function loadGeoJson(url, fillColor, L, map) {
     // Fetch GeoJSON file
     fetch(url)
         .then(function (response) {
@@ -8,24 +8,49 @@ function loadGeoJson(url, fillColor, color, L, map) {
         })
         .then(function (data) {
 
-            let geojsonMarkerOptions = {
-                radius: 8,
-                fillColor: fillColor,
-                color: color,
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8
-            };
+            L.vectorGrid.slicer(data, {
+                rendererFactory: L.svg.tile,
+                vectorTileLayerStyles: {
+                    sliced: function (properties, zoom) {
+                        return {
+                            fillColor: fillColor,
+                            fillOpacity: 0.5,
+                            stroke: false,
+                            fill: true,
+                            color: 'black',
+                            radius: 11,
+                            weight: 0,
+                        }
+                    }
+                },
+                interactive: true,
+                // getFeatureId: function (f) {
+                //     return f.properties.id;
+                // }
+            })
+                .on('click', function (e) {
+                    L.popup()
+                        .setContent(createPopupContent(e.layer.properties, e.latlng.lat, e.latlng.lng))
+                        .setLatLng(e.latlng)
+                        .openOn(map);
+                })
+                .addTo(map);
 
-            L.geoJSON(data, {
-                onEachFeature: onEachFeature,
-                pointToLayer: function (feature, latlng) {
-                    return L.circleMarker(latlng, geojsonMarkerOptions);
-                }
-            }).addTo(map);
-
-            map.on('locationfound', onLocationFound);
-            map.on('locationerror', onLocationError);
+            // let geojsonMarkerOptions = {
+            //     radius: 8,
+            //     fillColor: fillColor,
+            //     color: color,
+            //     weight: 1,
+            //     opacity: 1,
+            //     fillOpacity: 0.8
+            // };
+            //
+            // L.geoJSON(data, {
+            //     onEachFeature: onEachFeature,
+            //     pointToLayer: function (feature, latlng) {
+            //         return L.circleMarker(latlng, geojsonMarkerOptions);
+            //     }
+            // }).addTo(map);
         })
         .catch(function (error) {
             console.log('Error loading the GeoJSON file: ' + error.message);
@@ -33,44 +58,59 @@ function loadGeoJson(url, fillColor, color, L, map) {
 }
 
 function init() {
-
-    let open_topo_map = L.tileLayer.provider('OpenTopoMap');
-    let osm_de = L.tileLayer.provider('OpenStreetMap.DE');
-    let osm_france = L.tileLayer.provider('OpenStreetMap.France');
-    let open_cycle_map = new L.TileLayer('https://tile.thunderforest.com/cycle/{z}/{x}/{y}{r}.png?apikey=db5ae1f5778a448ca662554581f283c5', {
-        maxZoom: 18
-    });
-
-
-    let baseMaps = {
-        "OpenTopoMap": open_topo_map,
-        "OpenStreetMap.DE": osm_de,
-        "OpenStreetMap.France": osm_france,
-        "OpenCycleMap": open_cycle_map
-    };
-
-    let overlays = {//add any overlays here
-
-    };
+    //
+    // let open_topo_map = L.tileLayer.provider('OpenTopoMap');
+    // let osm_de = L.tileLayer.provider('OpenStreetMap.DE');
+    // let osm_france = L.tileLayer.provider('OpenStreetMap.France');
+    // let open_cycle_map = new L.TileLayer('https://tile.thunderforest.com/cycle/{z}/{x}/{y}{r}.png?apikey=db5ae1f5778a448ca662554581f283c5', {
+    //     maxZoom: 18
+    // });
+    //
+    //
+    // let baseMaps = {
+    //     "OpenTopoMap": open_topo_map,
+    //     "OpenStreetMap.DE": osm_de,
+    //     "OpenStreetMap.France": osm_france,
+    //     "OpenCycleMap": open_cycle_map
+    // };
+    //
+    // let overlays = {//add any overlays here
+    //
+    // };
+    //
+    // map = L.map('map', {
+    //     doubleClickZoom: false,
+    //     zoomControl: false
+    // }).locate({setView: true, maxZoom: 18});
+    //
+    // map.on('locationfound', onLocationFound);
+    // map.on('locationerror', onLocationError);
+    //
+    // osm_france.addTo(map);
+    //
+    // L.control.layers(baseMaps, overlays, {position: 'topleft'}).addTo(map);
+    //
+    // L.control.zoom({
+    //     position: 'bottomright'
+    // }).addTo(map);
+    //
+    // L.tileLayer('https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey={accessToken}', {
+    //     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="http://www.thunderforest.com/">Thunderforest</a>',
+    //     maxZoom: 18,
+    //     id: 'thunderforest/atlas',
+    //     accessToken: 'a794617134d14b1f82f1cd09d35bca51'
+    // }).addTo(map);
 
     map = L.map('map', {
         doubleClickZoom: false,
         zoomControl: false
     }).locate({setView: true, maxZoom: 18});
 
-    osm_france.addTo(map);
+    let cartodbAttribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>';
 
-    L.control.layers(baseMaps, overlays, {position: 'topleft'}).addTo(map);
-
-    L.control.zoom({
-        position: 'bottomright'
-    }).addTo(map);
-
-    L.tileLayer('https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="http://www.thunderforest.com/">Thunderforest</a>',
-        maxZoom: 18,
-        id: 'thunderforest/atlas',
-        accessToken: 'a794617134d14b1f82f1cd09d35bca51'
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
+        attribution: cartodbAttribution,
+        opacity: 1
     }).addTo(map);
 
     let scale = L.control.scale({position: 'topright'}); // Creating scale control
@@ -100,15 +140,12 @@ function init() {
 
     map.addControl(search);
 
-    loadGeoJson('./data/campgrounds.geojson', "#ff7800", "#000", L, map);
 
-    loadGeoJson('./data/bettundbike.geojson', "#556700", "#000", L, map);
-
-    loadGeoJson('./data/ioverlander.geojson', "#0067FF", "#FFF", L, map);
-
-    loadGeoJson('./data/alpacacamping.geojson', "#FF0000", "#FFF", L, map);
-
-    loadGeoJson('./data/hinterland.geojson', "#FFFF00", "#000", L, map);
+    loadGeoJson('./data/campgrounds.geojson', "#ff7800", L, map);
+    loadGeoJson('./data/bettundbike.geojson', "#556700", L, map);
+    loadGeoJson('./data/ioverlander.geojson', "#0067FF", L, map);
+    loadGeoJson('./data/alpacacamping.geojson', "#FF0000", L, map);
+    loadGeoJson('./data/hinterland.geojson', "#FFFF00", L, map);
 
 };
 
@@ -148,7 +185,6 @@ function createPopupContent(properties, lat, lng) {
     let googleMapsPositionUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`
     let googleMapsStreetViewUrl = `https://maps.google.com/maps?q=&layer=c&cbll=${lat},${lng}`
     let googleMapsStreetViewUrl2 = `comgooglemaps://?center=${lat},${lng}&mapmode=streetview`
-
 
 
     return `

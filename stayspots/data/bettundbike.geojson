@@ -16435,8 +16435,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.16559,
-          50.143546
+          7.16605,
+          50.14404
         ]
       }
     },
@@ -25436,8 +25436,8 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Gut Schöneworth",
-        "description": "From <b><a href=\"https://www.bettundbike.de/unterkunft/gut-schoeneworth-1006621\">Bett und Bike</a>:</b>",
+        "name": "Hotel Gut Schöneworth",
+        "description": "From <b><a href=\"https://www.bettundbike.de/unterkunft/hotel-gut-schoeneworth-1006621\">Bett und Bike</a>:</b>",
         "link": "",
         "marker-color": "#00FF00",
         "marker-symbol": "commercial"
@@ -36537,8 +36537,8 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Wohlfühlhotel Rabenhorst",
-        "description": "From <b><a href=\"https://www.bettundbike.de/unterkunft/wohlfuehlhotel-rabenhorst-1012632\">Bett und Bike</a>:</b>",
+        "name": "Waldidyll Rabenhorst",
+        "description": "From <b><a href=\"https://www.bettundbike.de/unterkunft/waldidyll-rabenhorst-1012632\">Bett und Bike</a>:</b>",
         "link": "",
         "marker-color": "#00FF00",
         "marker-symbol": "commercial"
@@ -59062,23 +59062,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Aumühle",
-        "description": "From <b><a href=\"https://www.bettundbike.de/unterkunft/aumuehle-1005033\">Bett und Bike</a>:</b>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.478197,
-          50.85264
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Parkhotel zum Stern",
         "description": "From <b><a href=\"https://www.bettundbike.de/unterkunft/parkhotel-zum-stern-1005425\">Bett und Bike</a>:</b>",
         "link": "",
@@ -59090,6 +59073,23 @@
         "coordinates": [
           9.471842,
           50.857764
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Reiterhof, B&B und Wohnmobilplatz Aumühle",
+        "description": "From <b><a href=\"https://www.bettundbike.de/unterkunft/reiterhof-b-b-und-wohnmobilplatz-aumuehle-1005033\">Bett und Bike</a>:</b>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.478197,
+          50.85264
         ]
       }
     },
@@ -61351,23 +61351,6 @@
         "coordinates": [
           11.76326,
           54.15274
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Ferienhof Ostseeland Rerik",
-        "description": "From <b><a href=\"https://www.bettundbike.de/unterkunft/ferienhof-ostseeland-rerik-1010511\">Bett und Bike</a>:</b>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.63345,
-          54.09841
         ]
       }
     },

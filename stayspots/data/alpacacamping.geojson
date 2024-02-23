@@ -21,23 +21,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Tee-Time #1",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/1612\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/4020/conversions/1629456058_FTK_0132Golf_eisenach-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.427754733492,
-          50.984324409441
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Natur pur #4",
         "description": "From <b><a href=\"https://www.alpacacamping.de/properties/1637\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/5929/conversions/1658822485_dji_export_1658230095970-medium.jpg\"/>",
         "link": "",
@@ -6685,23 +6668,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Hinter dem Hof im Garten #1",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/5217\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/4699/conversions/1646816951_Klaus_Jaeger2-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.365292,
-          51.443911
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Hinter dem Hof im Garten #3",
         "description": "From <b><a href=\"https://www.alpacacamping.de/properties/5219\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/4702/conversions/1646816860_JaegerSpielplatz-medium.jpg\"/>",
         "link": "",
@@ -7229,23 +7195,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Alter Gutshof #2",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/5867\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/30134/conversions/1653303789_Bild_4-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.118091,
-          51.653651
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Land erleben am Nordrand des Fläming #1",
         "description": "From <b><a href=\"https://www.alpacacamping.de/properties/5876\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/5167/conversions/1652178182_5BFC674F-E3FA-4EE8-9042-C8D205733CFB_1_201_a-medium.jpg\"/>",
         "link": "",
@@ -7614,23 +7563,6 @@
         "coordinates": [
           10.4466074,
           50.1106335
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Alter Gutshof #1",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/5853\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/5295/conversions/1653303449_Bild_1-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.118091,
-          51.653651
         ]
       }
     },
@@ -14091,23 +14023,6 @@
         "coordinates": [
           16.774250159699,
           48.615520223288
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Campen in der Landwirtschaft, im grünen bei Obstbäumen #2",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/9401\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/55208/conversions/1677144218_ID9400-0-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.4466933247049,
-          47.182438580481
         ]
       }
     },
@@ -30536,23 +30451,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Wiesen Idylle #2",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/5906\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/41198/conversions/1661751757_dji_export_1661260930401-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          13.228173,
-          51.448727
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Stellplatz mit traumhaftem Ausblick #2",
         "description": "From <b><a href=\"https://www.alpacacamping.de/properties/5028\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/5195/conversions/1652461488_IMG-20220513-WA0017-medium.jpg\"/>",
         "link": "",
@@ -36911,23 +36809,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Bei den Weihnachtsbäumen am Waldrand #2",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/2365\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/4588/conversions/1642491099_2353_Marx4-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.645138238098355,
-          50.10096463758552
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "RoSy - Der Stellplatz nähe Bodensee #1",
         "description": "From <b><a href=\"https://www.alpacacamping.de/properties/11864\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/10247/conversions/1685983092_IMG_1098-medium.jpg\"/>",
         "link": "",
@@ -42209,23 +42090,6 @@
         "coordinates": [
           15.955138903480531,
           48.69672933110073
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Stellplatz am Bauernhof mit Blick in die Berge #2",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/2339\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/31782/conversions/1654597952_Bild_4-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.846392,
-          47.809662
         ]
       }
     },
@@ -54132,23 +53996,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "An der Heimatscheune in der Nähe vom Barockschloss Rammenau #1",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/11761\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/100460/conversions/20231025_162045-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          14.127587876086958,
-          51.160962956671696
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Auszeit Lindigshof #2",
         "description": "From <b><a href=\"https://www.alpacacamping.de/properties/2207\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/63042/conversions/1679667553_B113A68C-D98D-4AEC-B8B9-1FE70BAD9C46_1_201_a-medium.jpg\"/>",
         "link": "",
@@ -56750,23 +56597,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "An der Heimatscheune in der Nähe vom Barockschloss Rammenau #2",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/12350\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/100458/conversions/20231025_162045-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          14.127587876086958,
-          51.160962956671696
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Friesoythe Soesteheim direkt am Fluß der Soeste #2",
         "description": "From <b><a href=\"https://www.alpacacamping.de/properties/1243\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/42073/conversions/1662035129_Photo_6620013_DJI_877_jpg_6247834_0_202263114954_photo_original.jpg-medium.jpg\"/>",
         "link": "",
@@ -56990,23 +56820,6 @@
       "properties": {
         "name": "Wohnmobilstellplatz Tuchanger #7",
         "description": "From <b><a href=\"https://www.alpacacamping.de/properties/12285\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/83017/conversions/1681742415_Zeil_am_Main-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.58958291762,
-          50.009162749404
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Wohnmobilstellplatz Tuchanger #4",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/12282\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/83014/conversions/1681742415_Zeil_am_Main-medium.jpg\"/>",
         "link": "",
         "marker-color": "#00FF00",
         "marker-symbol": "commercial"
@@ -59759,23 +59572,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Ruhe an der Mühle #1",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/1698\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/5936/conversions/1658827150_IMG_20220725_111933-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.9925189058349,
-          50.57827140187
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Stellplatz Alheimerblick",
         "description": "From <b><a href=\"https://www.alpacacamping.de/properties/5073\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/6127/conversions/1660539374_IMG_20220815_065543-medium.jpg\"/>",
         "link": "",
@@ -60592,23 +60388,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Stellplatz auf Biohof im Grünen bei Kißlegg im Allgäu",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/10980\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/9553/conversions/1681885969_67767B4E-B2CD-4BEA-B47F-A475AE897A58_1_201_a-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8606082764275,
-          47.772776160156
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Wohnmobilstellplatz am Kegelsberg #6",
         "description": "From <b><a href=\"https://www.alpacacamping.de/properties/9762\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/9859/conversions/1683629475_Wohnmobilstellplatz_Bild_1-medium.jpg\"/>",
         "link": "",
@@ -60671,23 +60450,6 @@
         "coordinates": [
           9.6892116005193,
           47.637294620202
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Stellplatz am Bauernhof mit Blick in die Berge #1",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/2337\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/31778/conversions/1654597759_Bild_6-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.846392,
-          47.809662
         ]
       }
     },
@@ -64162,23 +63924,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "KlosterGut Schlehdorf - Urlaub auf dem Bauernhof #1",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/457\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/47943/conversions/1665410144_Klostergut_Schlehdorf_2-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.319251488360589,
-          47.658505684489924
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Stellplatz auf dem Ökohof #3",
         "description": "From <b><a href=\"https://www.alpacacamping.de/properties/208\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/10898/conversions/1613995335_1612069128_20200615_093234-medium.jpg\"/>",
         "link": "",
@@ -64859,23 +64604,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Einzelstellplatz in Gerolfing",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/7444\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/6827/conversions/1664357889_Wohnmobilstellplatz_Bild_1-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.348418520943511,
-          48.76758588254933
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Ruhiger Stellplatz zwischen Wiesen und Felder #2",
         "description": "From <b><a href=\"https://www.alpacacamping.de/properties/6376\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/7013/conversions/1666077462_Wohnmobilstellplatz_Bild_8-medium.jpg\"/>",
         "link": "",
@@ -65012,23 +64740,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Panoramastellplatz #2",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/5096\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/4648/conversions/1645696685_DJI_0474-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.79660130714882,
-          46.68885681643826
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Obstwiese im Breitenbachtal #4",
         "description": "From <b><a href=\"https://www.alpacacamping.de/properties/9161\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/10259/conversions/1686042620_ID9162-2-medium.jpg\"/>",
         "link": "",
@@ -65040,23 +64751,6 @@
         "coordinates": [
           9.1729155269394,
           48.485421366988
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Stellplatz am Bacherhof #1",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/13927\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/107516/conversions/_MG_8897-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.514797897009249,
-          46.91798949336542
         ]
       }
     },
@@ -65335,23 +65029,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Stellplatz auf 7000 m² Streuobstwiese bei Tilleda gegenüber vom Kyffhäuser / Alleinlage #2",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/11298\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/99074/conversions/8D5B7DB0-798D-4CAA-9F1E-EF5CDF28ADA5_1_105_c-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.160106345104,
-          51.429987328538
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Große Sonnenwiese Bodensee/Hegau mit Ausblick",
         "description": "From <b><a href=\"https://www.alpacacamping.de/properties/11244\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/9716/conversions/1682670237_IMG_8826-medium.jpg\"/>",
         "link": "",
@@ -65414,23 +65091,6 @@
         "coordinates": [
           11.319232712897,
           47.658530976835
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Nahe am Ammersee #2",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/1156\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/4534/conversions/1638979934_Photo_6554584_DJI_984_jpg_5831053_0_202198104522_photo_original-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.158524285627323,
-          47.94218954435661
         ]
       }
     },
@@ -66117,23 +65777,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Hamburgs grünes Tor #2",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/12687\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/89353/conversions/20230801_165416-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.0110229,
-          53.3971392
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Entspannung mit herrlichem Panorama bis zu den Alpen - adults only -",
         "description": "From <b><a href=\"https://www.alpacacamping.de/properties/11756\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/78983/conversions/1687167217_ID11756-medium.jpg\"/>",
         "link": "",
@@ -66145,40 +65788,6 @@
         "coordinates": [
           12.458202426511,
           47.938562295981
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Lebenshofalpakas #1",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/13373\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/100466/conversions/sonne-medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.55463149719,
-          48.304245296181
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Entspannen und Entdecken im Schwabenland #2",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/12538\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/87157/conversions/tlo6Egr5NwMmiZYItbiadBPbnXa4VU-metaMjAyMzA3MTlfMDg0NzI3LWxhcmdlLmpwZw--medium.jpg\"/>",
-        "link": "",
-        "marker-color": "#00FF00",
-        "marker-symbol": "commercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.6119567,
-          48.6590879
         ]
       }
     },
@@ -66202,8 +65811,8 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Camping am südlichen Auerberg traumhaften Bergblick auf die Allgäuer Alpen #1",
-        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/2262\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/48748/conversions/1666000263_DSC_6479b-medium.jpg\"/>",
+        "name": "Entspannen und Entdecken im Schwabenland #2",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/12538\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/87157/conversions/tlo6Egr5NwMmiZYItbiadBPbnXa4VU-metaMjAyMzA3MTlfMDg0NzI3LWxhcmdlLmpwZw--medium.jpg\"/>",
         "link": "",
         "marker-color": "#00FF00",
         "marker-symbol": "commercial"
@@ -66211,8 +65820,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          10.722598014661,
-          47.722259293768
+          10.6119567,
+          48.6590879
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lebenshofalpakas #1",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/13373\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/100466/conversions/sonne-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.55463149719,
+          48.304245296181
         ]
       }
     },
@@ -66230,6 +65856,329 @@
         "coordinates": [
           7.419423,
           48.350837
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hamburgs grünes Tor #2",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/12687\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/89353/conversions/20230801_165416-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0110229,
+          53.3971392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Camping am südlichen Auerberg traumhaften Bergblick auf die Allgäuer Alpen #1",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/2262\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/48748/conversions/1666000263_DSC_6479b-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.722598014661,
+          47.722259293768
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Wiesen Idylle #2",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/5906\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/41198/conversions/1661751757_dji_export_1661260930401-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.228173,
+          51.448727
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Stellplatz auf 7000 m² Streuobstwiese bei Tilleda gegenüber vom Kyffhäuser / Alleinlage #2",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/11298\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/99074/conversions/8D5B7DB0-798D-4CAA-9F1E-EF5CDF28ADA5_1_105_c-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.160106345104,
+          51.429987328538
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hinter dem Hof im Garten #1",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/5217\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/4699/conversions/1646816951_Klaus_Jaeger2-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.365292,
+          51.443911
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bei den Weihnachtsbäumen am Waldrand #2",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/2365\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/4588/conversions/1642491099_2353_Marx4-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.645138238098355,
+          50.10096463758552
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ruhe an der Mühle #1",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/1698\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/5936/conversions/1658827150_IMG_20220725_111933-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9925189058349,
+          50.57827140187
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "An der Heimatscheune in der Nähe vom Barockschloss Rammenau #1",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/11761\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/100460/conversions/20231025_162045-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.127587876086958,
+          51.160962956671696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Campen in der Landwirtschaft, im grünen bei Obstbäumen #2",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/9401\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/55208/conversions/1677144218_ID9400-0-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4466933247049,
+          47.182438580481
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tee-Time #1",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/1612\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/4020/conversions/1629456058_FTK_0132Golf_eisenach-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.427754733492,
+          50.984324409441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KlosterGut Schlehdorf - Urlaub auf dem Bauernhof #1",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/457\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/47943/conversions/1665410144_Klostergut_Schlehdorf_2-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.319251488360589,
+          47.658505684489924
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nahe am Ammersee #2",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/1156\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/4534/conversions/1638979934_Photo_6554584_DJI_984_jpg_5831053_0_202198104522_photo_original-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.158524285627323,
+          47.94218954435661
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Stellplatz auf Biohof im Grünen bei Kißlegg im Allgäu",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/10980\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/9553/conversions/1681885969_67767B4E-B2CD-4BEA-B47F-A475AE897A58_1_201_a-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.8606082764275,
+          47.772776160156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Stellplatz am Bauernhof mit Blick in die Berge #1",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/2337\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/31778/conversions/1654597759_Bild_6-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.846392,
+          47.809662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Stellplatz am Bauernhof mit Blick in die Berge #2",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/2339\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/31782/conversions/1654597952_Bild_4-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.846392,
+          47.809662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Panoramastellplatz #2",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/5096\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/4648/conversions/1645696685_DJI_0474-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.79660130714882,
+          46.68885681643826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Stellplatz am Bacherhof #1",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/13927\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/107516/conversions/_MG_8897-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.514797897009249,
+          46.91798949336542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Wohnmobilstellplatz Tuchanger #4",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/12282\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/83014/conversions/1681742415_Zeil_am_Main-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.58958291762,
+          50.009162749404
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "An der Heimatscheune in der Nähe vom Barockschloss Rammenau #2",
+        "description": "From <b><a href=\"https://www.alpacacamping.de/properties/12350\">aplacacamping</a></b><br><img width=\"200px\" src=\"https://cdn.alpacaglamping.de/storage/100458/conversions/20231025_162045-medium.jpg\"/>",
+        "link": "",
+        "marker-color": "#00FF00",
+        "marker-symbol": "commercial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.127587876086958,
+          51.160962956671696
         ]
       }
     }

@@ -24,9 +24,6 @@ function loadGeoJson(url, fillColor, L, map) {
                     }
                 },
                 interactive: true,
-                // getFeatureId: function (f) {
-                //     return f.properties.id;
-                // }
             })
                 .on('click', function (e) {
                     L.popup()
@@ -35,22 +32,6 @@ function loadGeoJson(url, fillColor, L, map) {
                         .openOn(map);
                 })
                 .addTo(map);
-
-            // let geojsonMarkerOptions = {
-            //     radius: 8,
-            //     fillColor: fillColor,
-            //     color: color,
-            //     weight: 1,
-            //     opacity: 1,
-            //     fillOpacity: 0.8
-            // };
-            //
-            // L.geoJSON(data, {
-            //     onEachFeature: onEachFeature,
-            //     pointToLayer: function (feature, latlng) {
-            //         return L.circleMarker(latlng, geojsonMarkerOptions);
-            //     }
-            // }).addTo(map);
         })
         .catch(function (error) {
             console.log('Error loading the GeoJSON file: ' + error.message);
@@ -58,49 +39,6 @@ function loadGeoJson(url, fillColor, L, map) {
 }
 
 function init() {
-    //
-    // let open_topo_map = L.tileLayer.provider('OpenTopoMap');
-    // let osm_de = L.tileLayer.provider('OpenStreetMap.DE');
-    // let osm_france = L.tileLayer.provider('OpenStreetMap.France');
-    // let open_cycle_map = new L.TileLayer('https://tile.thunderforest.com/cycle/{z}/{x}/{y}{r}.png?apikey=db5ae1f5778a448ca662554581f283c5', {
-    //     maxZoom: 18
-    // });
-    //
-    //
-    // let baseMaps = {
-    //     "OpenTopoMap": open_topo_map,
-    //     "OpenStreetMap.DE": osm_de,
-    //     "OpenStreetMap.France": osm_france,
-    //     "OpenCycleMap": open_cycle_map
-    // };
-    //
-    // let overlays = {//add any overlays here
-    //
-    // };
-    //
-    // map = L.map('map', {
-    //     doubleClickZoom: false,
-    //     zoomControl: false
-    // }).locate({setView: true, maxZoom: 18});
-    //
-    // map.on('locationfound', onLocationFound);
-    // map.on('locationerror', onLocationError);
-    //
-    // osm_france.addTo(map);
-    //
-    // L.control.layers(baseMaps, overlays, {position: 'topleft'}).addTo(map);
-    //
-    // L.control.zoom({
-    //     position: 'bottomright'
-    // }).addTo(map);
-    //
-    // L.tileLayer('https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey={accessToken}', {
-    //     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="http://www.thunderforest.com/">Thunderforest</a>',
-    //     maxZoom: 18,
-    //     id: 'thunderforest/atlas',
-    //     accessToken: 'a794617134d14b1f82f1cd09d35bca51'
-    // }).addTo(map);
-
     map = L.map('map', {
         doubleClickZoom: false,
         zoomControl: false
@@ -173,19 +111,10 @@ function onEachFeature(feature, layer) {
 
 // Function to create a popup content string
 function createPopupContent(properties, lat, lng) {
-
-    // Example of manually converting a phone number in the description to a clickable link
-    // Assuming 'properties.description' contains a phone number formatted as "+1-123-456-7890"
-    // var formattedDescription = properties.description.replace(
-    //     /(\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9})/g
-    //     , '<a href="tel:$1">$1</a>'
-    // );
-
     let googleMapsDirectionUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=bicycling`;
     let googleMapsPositionUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`
     let googleMapsStreetViewUrl = `https://maps.google.com/maps?q=&layer=c&cbll=${lat},${lng}`
     let googleMapsStreetViewUrl2 = `comgooglemaps://?center=${lat},${lng}&mapmode=streetview`
-
 
     return `
         <strong>${properties.name}</strong><br>

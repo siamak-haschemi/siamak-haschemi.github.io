@@ -93,7 +93,7 @@ curl 'https://search.alpacacamping.de/api/search?page=1&count=10000&language=de&
 
 ####################
 
-minlat=42&maxlat=43&minlon=-9&maxlon=-8
+REQ="minlat=51.36835106051133&maxlat=52.384139246859775&minlon=10.048692226409914&maxlon=13.763122558593752&centerlat=51.8762451537&centerlon=11.9059073925"
 
 curl 'https://de.warmshowers.org/services/rest2/hosts/by_location' \
   -H 'authority: de.warmshowers.org' \
@@ -113,7 +113,7 @@ curl 'https://de.warmshowers.org/services/rest2/hosts/by_location' \
   -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36' \
   -H 'x-csrf-token: pZ9XnJAu7-Fn-NEpYMDZwZAZjf2NVNNr3-eRdw2Enfg' \
   -H 'x-requested-with: XMLHttpRequest' \
-  --data-raw 'minlat=42.52981433693957&maxlat=52.15480363270683&minlon=-9.996562389927476&maxlon=22.698750110072524&centerlat=52.15480363270683&centerlon=-9.996562389927476&limit=800&showinactivemembers=&maxcyclists=&lodging=&food=&other-logistics=&local-services=' \
+  --data-raw "$REQ&limit=800&showinactivemembers=&maxcyclists=&lodging=&food=&other-logistics=&local-services=" \
   --compressed > data/warmshowers.json
 
   jq '{ type: "FeatureCollection", features: [ .accounts[] | { type: "Feature", properties: { name: .name, description: ("From <b><a href=\"https://de.warmshowers.org/user/"+ (.uid|tostring) + "\">Wamshowers</a></b><br>" + .fullname + "<br>" + .street + "<br>" + .city + "<br>"), link: "", "marker-color": "#00FF00", "marker-symbol": "commercial" }, geometry: { type: "Point", coordinates: [ .longitude, .latitude ] } }] }' data/warmshowers.json > data/warmshowers.geojson

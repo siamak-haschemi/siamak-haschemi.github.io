@@ -3,7 +3,7 @@ var map;
 var vectorTileLayerStyles = {
     warmshowers: function (properties, zoom) {
         return {
-            fillColor: "#2A4751",
+            fillColor: "#FFFF00",
             fillOpacity: 0.8,
             stroke: true,
             fill: true,

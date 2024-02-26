@@ -77,6 +77,7 @@ function loadGeoJson(name, url, L, map) {
         })
         .then(function (data) {
             L.vectorGrid.slicer(data, {
+                maxZoom: 18,
                 buffer: 500,
                 vectorTileLayerName: name,
                 rendererFactory: L.svg.tile,
@@ -138,7 +139,7 @@ function init() {
     map.on('locationfound', onLocationFound);
     map.on('locationerror', onLocationError);
 
-    map.locate({setView: true, maxZoom: 15});
+    map.locate({setView: true, maxZoom: 18});
 
     // L.control.layers(overlays, {position: 'topleft'}).addTo(map);
 
@@ -157,7 +158,7 @@ function init() {
         div.innerHTML = '<button class="locate-btn">Locate Me</button>';
         div.firstChild.onmousedown = div.firstChild.ondblclick = L.DomEvent.stopPropagation;
         L.DomEvent.on(div.firstChild, 'click', L.DomEvent.stop).on(div.firstChild, 'click', function () {
-            map.locate({setView: true, maxZoom: 15});
+            map.locate({setView: true, maxZoom: 18});
         });
         return div;
     };

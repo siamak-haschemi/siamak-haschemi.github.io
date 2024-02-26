@@ -177,12 +177,12 @@ function init() {
     map.addControl(search);
 
 
-    loadGeoJson('onenighttent', './data/campgrounds.geojson', L, map);
-    loadGeoJson('bettundbike', './data/bettundbike.geojson', L, map);
-    loadGeoJson('ioverlander', './data/ioverlander.geojson', L, map);
-    loadGeoJson('alpacacamping', './data/alpacacamping.geojson', L, map);
-    loadGeoJson('hinterland', './data/hinterland.geojson', L, map);
-    loadGeoJson('warmshowers', './data/warmshowers.geojson', L, map);
+    loadGeoJson('onenighttent', './data/o.geojson', L, map);
+    loadGeoJson('bettundbike', './data/b.geojson', L, map);
+    loadGeoJson('ioverlander', './data/i.geojson', L, map);
+    loadGeoJson('alpacacamping', './data/a.geojson', L, map);
+    loadGeoJson('hinterland', './data/h.geojson', L, map);
+    loadGeoJson('warmshowers', './data/w.geojson', L, map);
 
     // let gpx = "./data/test.gpx";
     // new L.GPX(gpx, {async: true}).addTo(map);

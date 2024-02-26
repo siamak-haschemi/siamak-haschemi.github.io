@@ -103,11 +103,11 @@ function init() {
     //     {
     //         zIndex: 1
     //     });
-    // let osm_de = L.tileLayer.provider('OpenStreetMap.DE',
-    //     {
-    //         zIndex: 1
-    //     });
-    //
+    let osm_de = L.tileLayer.provider('OpenStreetMap.DE',
+        {
+            zIndex: 1
+        });
+
     // let osm_france = L.tileLayer.provider('OpenStreetMap.France',
     //     {
     //         zIndex: 1
@@ -133,7 +133,12 @@ function init() {
     map = L.map('map', {
         doubleClickZoom: false,
         zoomControl: false
-    }).locate({setView: true, maxZoom: 18});
+    });
+
+    map.on('locationfound', onLocationFound);
+    map.on('locationerror', onLocationError);
+
+    map.locate({setView: true, maxZoom: 15});
 
     // L.control.layers(overlays, {position: 'topleft'}).addTo(map);
 
@@ -141,7 +146,7 @@ function init() {
         position: 'bottomright'
     }).addTo(map);
 
-    open_cycle_map.addTo(map);
+    osm_de.addTo(map);
 
     let scale = L.control.scale({position: 'topright'}); // Creating scale control
     scale.addTo(map); // Adding scale control to the map
@@ -152,7 +157,7 @@ function init() {
         div.innerHTML = '<button class="locate-btn">Locate Me</button>';
         div.firstChild.onmousedown = div.firstChild.ondblclick = L.DomEvent.stopPropagation;
         L.DomEvent.on(div.firstChild, 'click', L.DomEvent.stop).on(div.firstChild, 'click', function () {
-            map.locate({setView: true, maxZoom: 16});
+            map.locate({setView: true, maxZoom: 15});
         });
         return div;
     };
@@ -177,12 +182,17 @@ function init() {
     loadGeoJson('alpacacamping', './data/alpacacamping.geojson', L, map);
     loadGeoJson('hinterland', './data/hinterland.geojson', L, map);
     loadGeoJson('warmshowers', './data/warmshowers.geojson', L, map);
+
+    let gpx = "./data/test.gpx";
+    new L.GPX(gpx, {async: true}).addTo(map);
 };
 
 
 function onLocationFound(e) {
-    let radius = e.accuracy;
-    L.circle(e.latlng, radius).addTo(map);
+    let radius = e.accuracy / 2;
+    let location = e.latlng
+    L.marker(location).addTo(map)
+    L.circle(location, radius).addTo(map);
 };
 
 function onLocationError(e) {

@@ -89,3 +89,31 @@ curl 'https://search.alpacacamping.de/api/search?page=1&count=10000&language=de&
     --compressed > data/hinterland.json
 
   jq '{ type: "FeatureCollection", features: [ .content[] | { type: "Feature", properties: { name: .title, description: ("From <b><a href=\"https://hinterland.camp/locations/"+ (.id|tostring) + "\">hinterland</a></b><br>" + .description), link: "", "marker-color": "#00FF00", "marker-symbol": "commercial" }, geometry: { type: "Point", coordinates: [ .position.longitude, .position.latitude ] } }] }' data/hinterland.json > data/hinterland.geojson
+
+
+####################
+
+minlat=42&maxlat=43&minlon=-9&maxlon=-8
+
+curl 'https://de.warmshowers.org/services/rest2/hosts/by_location' \
+  -H 'authority: de.warmshowers.org' \
+  -H 'accept: application/json, text/javascript, */*; q=0.01' \
+  -H 'accept-language: en-US,en;q=0.9,de;q=0.8' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/x-www-form-urlencoded; charset=UTF-8' \
+  -H 'origin: https://de.warmshowers.org' \
+  -H 'pragma: no-cache' \
+  -H 'referer: https://de.warmshowers.org/search' \
+  -H 'sec-ch-ua: "Not A(Brand";v="99", "Google Chrome";v="121", "Chromium";v="121"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36' \
+  -H 'x-csrf-token: pZ9XnJAu7-Fn-NEpYMDZwZAZjf2NVNNr3-eRdw2Enfg' \
+  -H 'x-requested-with: XMLHttpRequest' \
+  --data-raw 'minlat=42.52981433693957&maxlat=52.15480363270683&minlon=-9.996562389927476&maxlon=22.698750110072524&centerlat=52.15480363270683&centerlon=-9.996562389927476&limit=800&showinactivemembers=&maxcyclists=&lodging=&food=&other-logistics=&local-services=' \
+  --compressed > data/warmshowers.json
+
+  jq '{ type: "FeatureCollection", features: [ .accounts[] | { type: "Feature", properties: { name: .name, description: ("From <b><a href=\"https://de.warmshowers.org/user/"+ (.uid|tostring) + "\">Wamshowers</a></b><br>" + .fullname + "<br>" + .street + "<br>" + .city + "<br>"), link: "", "marker-color": "#00FF00", "marker-symbol": "commercial" }, geometry: { type: "Point", coordinates: [ .longitude, .latitude ] } }] }' data/warmshowers.json > data/warmshowers.geojson

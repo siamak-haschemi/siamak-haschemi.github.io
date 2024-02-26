@@ -1,28 +1,87 @@
 var map;
 
-function loadGeoJson(url, fillColor, L, map) {
+var vectorTileLayerStyles = {
+    warmshowers: function (properties, zoom) {
+        return {
+            fillColor: "#2A4751",
+            fillOpacity: 0.8,
+            stroke: true,
+            fill: true,
+            color: 'black',
+            radius: 11,
+            weight: 3,
+        }
+    },
+    onenighttent: function (properties, zoom) {
+        return {
+            fillColor: "#EE7F00",
+            fillOpacity: 0.8,
+            stroke: true,
+            fill: true,
+            color: 'black',
+            radius: 11,
+            weight: 3,
+        }
+    },
+    bettundbike: function (properties, zoom) {
+        return {
+            fillColor: "#B23C01",
+            fillOpacity: 0.8,
+            stroke: true,
+            fill: true,
+            color: 'black',
+            radius: 11,
+            weight: 3,
+        }
+    },
+    ioverlander: function (properties, zoom) {
+        return {
+            fillColor: "#8F4EC7",
+            fillOpacity: 0.8,
+            stroke: true,
+            fill: true,
+            color: 'black',
+            radius: 11,
+            weight: 3,
+        }
+    },
+    alpacacamping: function (properties, zoom) {
+        return {
+            fillColor: "#137071",
+            fillOpacity: 0.8,
+            stroke: true,
+            fill: true,
+            color: 'black',
+            radius: 11,
+            weight: 3,
+        }
+    },
+    hinterland: function (properties, zoom) {
+        return {
+            fillColor: "#000000",
+            fillOpacity: 0.8,
+            stroke: true,
+            fill: true,
+            color: 'black',
+            radius: 11,
+            weight: 3,
+        }
+    }
+};
+
+function loadGeoJson(name, url, L, map) {
     // Fetch GeoJSON file
     fetch(url)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-
             L.vectorGrid.slicer(data, {
+                buffer: 500,
+                vectorTileLayerName: name,
                 rendererFactory: L.svg.tile,
-                vectorTileLayerStyles: {
-                    sliced: function (properties, zoom) {
-                        return {
-                            fillColor: fillColor,
-                            fillOpacity: 0.5,
-                            stroke: false,
-                            fill: true,
-                            color: 'black',
-                            radius: 11,
-                            weight: 0,
-                        }
-                    }
-                },
+                zIndex: 3,
+                vectorTileLayerStyles: vectorTileLayerStyles,
                 interactive: true,
             })
                 .on('click', function (e) {
@@ -39,22 +98,55 @@ function loadGeoJson(url, fillColor, L, map) {
 }
 
 function init() {
+
+    // let open_topo_map = L.tileLayer.provider('OpenTopoMap',
+    //     {
+    //         zIndex: 1
+    //     });
+    // let osm_de = L.tileLayer.provider('OpenStreetMap.DE',
+    //     {
+    //         zIndex: 1
+    //     });
+    //
+    // let osm_france = L.tileLayer.provider('OpenStreetMap.France',
+    //     {
+    //         zIndex: 1
+    //     });
+
+    let open_cycle_map = new L.TileLayer('https://tile.thunderforest.com/cycle/{z}/{x}/{y}{r}.png?apikey=db5ae1f5778a448ca662554581f283c5', {
+        maxZoom: 18,
+        zIndex: 1
+    });
+    //
+    // let baseMaps = {
+    //     "OpenTopoMap": open_topo_map,
+    //     "OpenStreetMap.DE": osm_de,
+    //     "OpenStreetMap.France": osm_france,
+    //     "OpenCycleMap": open_cycle_map
+    // };
+
+
+    // let overlays = {//add any overlays here
+    //
+    // };
+
     map = L.map('map', {
         doubleClickZoom: false,
         zoomControl: false
     }).locate({setView: true, maxZoom: 18});
 
-    let cartodbAttribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>';
+    // L.control.layers(overlays, {position: 'topleft'}).addTo(map);
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
-        attribution: cartodbAttribution,
-        opacity: 1
+    L.control.zoom({
+        position: 'bottomright'
     }).addTo(map);
+
+    open_cycle_map.addTo(map);
 
     let scale = L.control.scale({position: 'topright'}); // Creating scale control
     scale.addTo(map); // Adding scale control to the map
 
-    var locateBtn = L.control({position: 'bottomright'});
+    let locateBtn = L.control({position: 'bottomright'});
     locateBtn.onAdd = function (map) {
         var div = L.DomUtil.create('div', '');
         div.innerHTML = '<button class="locate-btn">Locate Me</button>';
@@ -79,12 +171,12 @@ function init() {
     map.addControl(search);
 
 
-    loadGeoJson('./data/campgrounds.geojson', "#ff7800", L, map);
-    loadGeoJson('./data/bettundbike.geojson', "#556700", L, map);
-    loadGeoJson('./data/ioverlander.geojson', "#0067FF", L, map);
-    loadGeoJson('./data/alpacacamping.geojson', "#FF0000", L, map);
-    loadGeoJson('./data/hinterland.geojson', "#FFFF00", L, map);
-
+    loadGeoJson('onenighttent', './data/campgrounds.geojson', L, map);
+    loadGeoJson('bettundbike', './data/bettundbike.geojson', L, map);
+    loadGeoJson('ioverlander', './data/ioverlander.geojson', L, map);
+    loadGeoJson('alpacacamping', './data/alpacacamping.geojson', L, map);
+    loadGeoJson('hinterland', './data/hinterland.geojson', L, map);
+    loadGeoJson('warmshowers', './data/warmshowers.geojson', L, map);
 };
 
 

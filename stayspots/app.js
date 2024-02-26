@@ -69,6 +69,49 @@ var vectorTileLayerStyles = {
     }
 };
 
+L.Control.ImportGPX = L.Control.extend({
+    onAdd: function(map) {
+        let input = L.DomUtil.create('input');
+        input.type = 'file';
+        input.style.display = 'none'; // Initially hide the file input
+        input.onchange = e => {
+            let file = e.target.files[0];
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function(event) {
+                    let gpx = event.target.result; // This is the GPX content
+                    new L.GPX(gpx, {async: true}).on('loaded', function(e) {
+                        map.fitBounds(e.target.getBounds());
+                    }).addTo(map);
+                };
+                reader.readAsText(file);
+            }
+        };
+
+        let button = L.DomUtil.create('button');
+        button.innerHTML = 'Import GPX';
+        button.style.backgroundColor = 'white';
+        button.style.padding = '5px';
+        button.onclick = function() {
+            input.click(); // Trigger file input when button is clicked
+        };
+
+        let container = L.DomUtil.create('div');
+        container.appendChild(button);
+        container.appendChild(input);
+
+        return container;
+    },
+
+    onRemove: function(map) {
+        // Nothing to remove
+    }
+});
+
+L.control.importgpx = function(opts) {
+    return new L.Control.ImportGPX(opts);
+}
+
 function loadGeoJson(name, url, L, map) {
     // Fetch GeoJSON file
     fetch(url)
@@ -176,6 +219,8 @@ function init() {
 
     map.addControl(search);
 
+    L.control.importgpx({ position: 'topleft' }).addTo(map);
+
 
     loadGeoJson('onenighttent', './data/o.geojson', L, map);
     loadGeoJson('bettundbike', './data/b.geojson', L, map);
@@ -183,9 +228,6 @@ function init() {
     loadGeoJson('alpacacamping', './data/a.geojson', L, map);
     loadGeoJson('hinterland', './data/h.geojson', L, map);
     loadGeoJson('warmshowers', './data/w.geojson', L, map);
-
-    // let gpx = "./data/test.gpx";
-    // new L.GPX(gpx, {async: true}).addTo(map);
 };
 
 

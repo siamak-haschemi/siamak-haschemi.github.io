@@ -77,10 +77,12 @@ L.Control.ImportGPX = L.Control.extend({
         input.onchange = e => {
             var file = e.target.files[0];
             window.alert(file);
-            
+
             if (file) {
                 var reader = new FileReader();
                 reader.onload = function (event) {
+                    window.alert("onload");
+                    window.alert(event.target);
                     let gpx = event.target.result; // This is the GPX content
                     new L.GPX(gpx, {async: true}).on('loaded', function (e) {
                         map.fitBounds(e.target.getBounds());

@@ -183,8 +183,8 @@ function init() {
     loadGeoJson('hinterland', './data/hinterland.geojson', L, map);
     loadGeoJson('warmshowers', './data/warmshowers.geojson', L, map);
 
-    let gpx = "./data/test.gpx";
-    new L.GPX(gpx, {async: true}).addTo(map);
+    // let gpx = "./data/test.gpx";
+    // new L.GPX(gpx, {async: true}).addTo(map);
 };
 
 

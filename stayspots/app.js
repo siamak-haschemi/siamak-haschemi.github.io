@@ -71,13 +71,21 @@ var vectorTileLayerStyles = {
 
 L.Control.ImportGPX = L.Control.extend({
     onAdd: function(map) {
-        let input = L.DomUtil.create('input');
+        var label = L.DomUtil.create('label');
+        label.innerHTML = 'Import GPX';
+        label.style.backgroundColor = 'white';
+        label.style.padding = '5px';
+        label.setAttribute('for', 'fileinput'); // Ensure this matches the input's id
+        label.style.cursor = 'pointer'; // Make it look clickable
+
+        var input = L.DomUtil.create('input');
+        input.id = 'fileinput';
         input.type = 'file';
-        input.style.display = 'none'; // Initially hide the file input
+        input.style.display = 'none';
         input.onchange = e => {
-            let file = e.target.files[0];
+            var file = e.target.files[0];
             if (file) {
-                let reader = new FileReader();
+                var reader = new FileReader();
                 reader.onload = function(event) {
                     let gpx = event.target.result; // This is the GPX content
                     new L.GPX(gpx, {async: true}).on('loaded', function(e) {
@@ -88,16 +96,9 @@ L.Control.ImportGPX = L.Control.extend({
             }
         };
 
-        let button = L.DomUtil.create('button');
-        button.innerHTML = 'Import GPX';
-        button.style.backgroundColor = 'white';
-        button.style.padding = '5px';
-        button.onclick = function() {
-            input.click(); // Trigger file input when button is clicked
-        };
 
-        let container = L.DomUtil.create('div');
-        container.appendChild(button);
+        var container = L.DomUtil.create('div');
+        container.appendChild(label);
         container.appendChild(input);
 
         return container;

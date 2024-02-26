@@ -70,25 +70,19 @@ var vectorTileLayerStyles = {
 };
 
 L.Control.ImportGPX = L.Control.extend({
-    onAdd: function(map) {
-        var label = L.DomUtil.create('label');
-        label.innerHTML = 'Import GPX';
-        label.style.backgroundColor = 'white';
-        label.style.padding = '5px';
-        label.setAttribute('for', 'fileinput'); // Ensure this matches the input's id
-        label.style.cursor = 'pointer'; // Make it look clickable
-
+    onAdd: function (map) {
         var input = L.DomUtil.create('input');
         input.id = 'fileinput';
         input.type = 'file';
-        input.style.display = 'none';
         input.onchange = e => {
             var file = e.target.files[0];
+            window.alert(file);
+            
             if (file) {
                 var reader = new FileReader();
-                reader.onload = function(event) {
+                reader.onload = function (event) {
                     let gpx = event.target.result; // This is the GPX content
-                    new L.GPX(gpx, {async: true}).on('loaded', function(e) {
+                    new L.GPX(gpx, {async: true}).on('loaded', function (e) {
                         map.fitBounds(e.target.getBounds());
                     }).addTo(map);
                 };
@@ -98,18 +92,17 @@ L.Control.ImportGPX = L.Control.extend({
 
 
         var container = L.DomUtil.create('div');
-        container.appendChild(label);
         container.appendChild(input);
 
         return container;
     },
 
-    onRemove: function(map) {
+    onRemove: function (map) {
         // Nothing to remove
     }
 });
 
-L.control.importgpx = function(opts) {
+L.control.importgpx = function (opts) {
     return new L.Control.ImportGPX(opts);
 }
 
@@ -220,7 +213,7 @@ function init() {
 
     map.addControl(search);
 
-    L.control.importgpx({ position: 'topleft' }).addTo(map);
+    L.control.importgpx({position: 'topleft'}).addTo(map);
 
 
     loadGeoJson('onenighttent', './data/o.geojson', L, map);

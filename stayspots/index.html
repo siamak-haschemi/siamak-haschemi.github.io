@@ -27,6 +27,7 @@
     <script src="https://unpkg.com/leaflet-geosearch@3.1.0/dist/bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet-providers@latest/leaflet-providers.js"></script>
     <script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.bundled.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
 
     <style>
         body {
@@ -44,6 +45,8 @@
 </head>
 
 <body onload="init();">
+<input type="file" onchange="previewFile()" />
+
 <div id="map"></div>
 </body>
 </html>

@@ -69,43 +69,24 @@ var vectorTileLayerStyles = {
     }
 };
 
-L.Control.ImportGPX = L.Control.extend({
-    onAdd: function (map) {
-        var input = L.DomUtil.create('input');
-        input.id = 'fileinput';
-        input.type = 'file';
-        input.onchange = e => {
-            var file = e.target.files[0];
-            window.alert(file);
+function previewFile() {
+    const [file] = document.querySelector("input[type=file]").files;
+    const reader = new FileReader();
 
-            if (file) {
-                var reader = new FileReader();
-                reader.onload = function (event) {
-                    window.alert("onload");
-                    window.alert(event.target);
-                    let gpx = event.target.result; // This is the GPX content
-                    new L.GPX(gpx, {async: true}).on('loaded', function (e) {
-                        map.fitBounds(e.target.getBounds());
-                    }).addTo(map);
-                };
-                reader.readAsText(file);
-            }
-        };
+    reader.addEventListener(
+        "load",
+        () => {
+            let gpx = reader.result; // This is the GPX content
+            new L.GPX(gpx, {async: true}).on('loaded', function (e) {
+                map.fitBounds(e.target.getBounds());
+            }).addTo(map);
+        },
+        false,
+    );
 
-
-        var container = L.DomUtil.create('div');
-        container.appendChild(input);
-
-        return container;
-    },
-
-    onRemove: function (map) {
-        // Nothing to remove
+    if (file) {
+        reader.readAsText(file);
     }
-});
-
-L.control.importgpx = function (opts) {
-    return new L.Control.ImportGPX(opts);
 }
 
 function loadGeoJson(name, url, L, map) {
@@ -214,9 +195,6 @@ function init() {
     }); // Include the search box with usefull params. Autoclose and updateMap in my case. Provider is a compulsory parameter.
 
     map.addControl(search);
-
-    L.control.importgpx({position: 'topleft'}).addTo(map);
-
 
     loadGeoJson('onenighttent', './data/o.geojson', L, map);
     loadGeoJson('bettundbike', './data/b.geojson', L, map);
